@@ -95,7 +95,7 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up JDK 21
         if: hashFiles('backend/pom.xml') != ''
@@ -151,7 +151,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Node 24
         if: hashFiles('frontend/package-lock.json') != ''
@@ -207,7 +207,7 @@ jobs:
     needs: [backend, frontend]
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: docker/setup-buildx-action@v3
 
@@ -241,7 +241,7 @@ jobs:
     needs: [docker-build]
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Generate throwaway secrets
         run: |
