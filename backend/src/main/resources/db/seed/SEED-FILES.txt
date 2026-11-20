@@ -1,0 +1,12 @@
+# Demo seed data
+
+Loaded only with the `demo` profile (Flyway location `classpath:db/seed`). One repeatable file per owner:
+
+| File | Owner | Content |
+|---|---|---|
+| `R__seed_10_users_subjects.sql` | Sulaiman | demo teachers, students, subjects/topics |
+| `R__seed_20_questions.sql` | Mehedi | demo question bank |
+| `R__seed_30_exams_attempts.sql` | Sulaiman | upcoming / live / ended exams and attempts |
+| `R__seed_40_results.sql` | Alif | graded and published results |
+
+The first admin is created from `ADMIN_EMAIL` / `ADMIN_PASSWORD` at startup (never seeded in SQL).

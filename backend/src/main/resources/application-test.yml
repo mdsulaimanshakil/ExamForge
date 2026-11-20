@@ -1,0 +1,9 @@
+# Automated tests. The datasource comes from Testcontainers (@ServiceConnection).
+examforge:
+  scheduling:
+    enabled: false
+
+logging:
+  level:
+    com.examforge: INFO
+    org.testcontainers: WARN

@@ -1,0 +1,14 @@
+# Local development. Matches docker-compose.dev.yml. Dev-only defaults — never reuse in prod.
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/examforge}
+    username: ${DB_USERNAME:examforge}
+    password: ${DB_PASSWORD:examforge}
+  flyway:
+    out-of-order: true
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    com.examforge: DEBUG

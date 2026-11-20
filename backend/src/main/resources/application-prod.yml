@@ -1,0 +1,22 @@
+# Production. Every value without a default MUST be provided via environment variables;
+# the application fails fast at startup if one is missing.
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 15
+
+springdoc:
+  api-docs:
+    enabled: ${SWAGGER_ENABLED:false}
+  swagger-ui:
+    enabled: ${SWAGGER_ENABLED:false}
+
+logging:
+  structured:
+    format:
+      console: ecs
+  level:
+    root: INFO

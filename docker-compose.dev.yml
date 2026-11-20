@@ -1,0 +1,34 @@
+# Local development infrastructure.
+#   docker compose -f docker-compose.dev.yml up -d
+#   cd backend && ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+# Credentials below are for local development only.
+name: examforge-dev
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: examforge
+      POSTGRES_USER: examforge
+      POSTGRES_PASSWORD: examforge
+      TZ: UTC
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U examforge -d examforge"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  adminer:
+    image: adminer:5
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:

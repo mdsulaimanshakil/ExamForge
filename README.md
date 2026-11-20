@@ -33,8 +33,8 @@ cd backend  && ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev,demo
 cd frontend && npm ci && npm run dev
 ```
 
-- App: http://localhost:5173 · API docs: http://localhost:8080/swagger-ui.html
-- Demo accounts (demo profile): see `backend/src/main/resources/db/seed/README.md`
+- App: http://localhost:5173 · API docs: http://localhost:8080/api/swagger-ui.html
+- Demo accounts (demo profile): see `backend/src/main/resources/db/seed/SEED-FILES.txt`
 
 ## Contributing
 
