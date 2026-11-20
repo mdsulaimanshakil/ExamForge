@@ -1,0 +1,66 @@
+# ExamForge code ownership map (see docs/plan/11-merge-conflict-prevention.md).
+# Purpose: GitHub auto-requests the owner's review when someone ELSE edits these paths.
+# "Require review from Code Owners" is intentionally OFF during the 14-day sprint
+# (see docs/plan/10-permission-approval-matrix.md §10.3).
+# IMPORTANT: the LAST matching pattern wins → general paths first, specific paths later.
+
+# ---------- Defaults ----------
+*                                                       @mdsulaimanshakil
+/backend/                                               @mdsulaimanshakil
+/frontend/                                              @mehedii-13
+
+# ---------- Repository / DevOps (Sulaiman) ----------
+/.github/                                               @mdsulaimanshakil
+/deploy/                                                @mdsulaimanshakil
+/docker-compose*.yml                                    @mdsulaimanshakil
+/docs/plan/                                             @mdsulaimanshakil
+
+# ---------- Backend core (Sulaiman) ----------
+/backend/src/main/java/com/examforge/common/            @mdsulaimanshakil
+/backend/src/main/java/com/examforge/security/          @mdsulaimanshakil
+/backend/src/main/java/com/examforge/auth/              @mdsulaimanshakil
+/backend/src/main/java/com/examforge/user/              @mdsulaimanshakil
+/backend/src/main/java/com/examforge/question/          @mdsulaimanshakil
+/backend/src/main/java/com/examforge/exam/              @mdsulaimanshakil
+/backend/src/main/java/com/examforge/attempt/           @mdsulaimanshakil
+/backend/src/main/resources/                            @mdsulaimanshakil
+/backend/src/test/java/com/examforge/support/           @mdsulaimanshakil
+
+# Grading contract (interface + snapshot records) — shared by Alif and Sulaiman
+/backend/src/main/java/com/examforge/grading/           @alifalahad @mdsulaimanshakil
+
+# ---------- Alif ----------
+/backend/src/main/java/com/examforge/grading/engine/    @alifalahad
+/backend/src/main/java/com/examforge/grading/impl/      @alifalahad
+/backend/src/main/java/com/examforge/result/            @alifalahad
+/backend/src/main/java/com/examforge/analytics/         @alifalahad
+/backend/src/test/java/com/examforge/grading/           @alifalahad
+/backend/src/test/java/com/examforge/result/            @alifalahad
+/backend/src/test/java/com/examforge/analytics/         @alifalahad
+/frontend/src/features/grading/                         @alifalahad
+/frontend/src/features/results/                         @alifalahad
+/frontend/src/features/analytics/                       @alifalahad
+
+# ---------- Mehedi (backend modules) ----------
+/backend/src/main/java/com/examforge/user/admin/        @mehedii-13
+/backend/src/main/java/com/examforge/user/profile/      @mehedii-13
+/backend/src/main/java/com/examforge/subject/           @mehedii-13
+/backend/src/main/java/com/examforge/question/importexport/ @mehedii-13
+/backend/src/main/java/com/examforge/notification/      @mehedii-13
+/backend/src/main/java/com/examforge/audit/             @mehedii-13
+/backend/src/test/java/com/examforge/subject/           @mehedii-13
+/backend/src/test/java/com/examforge/notification/      @mehedii-13
+/backend/src/test/java/com/examforge/audit/             @mehedii-13
+/backend/src/test/java/com/examforge/user/              @mehedii-13
+
+# ---------- Sulaiman's frontend features ----------
+/frontend/src/features/student-exams/                   @mdsulaimanshakil
+/frontend/src/features/attempt/                         @mdsulaimanshakil
+/frontend/Dockerfile                                    @mdsulaimanshakil @mehedii-13
+/frontend/nginx.conf                                    @mdsulaimanshakil @mehedii-13
+
+# ---------- Shared build files ----------
+/backend/pom.xml                                        @mdsulaimanshakil
+/frontend/package.json                                  @mehedii-13
+/frontend/package-lock.json                             @mehedii-13
+/.github/CODEOWNERS                                     @mdsulaimanshakil

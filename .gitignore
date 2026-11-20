@@ -1,0 +1,43 @@
+# Local-only planning & documentation (never committed or pushed)
+docs/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_ed25519*
+
+# Backend (Maven)
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+!backend/.mvn/wrapper/maven-wrapper.properties
+backend/*.log
+backend/logs/
+hs_err_pid*
+
+# Frontend (Node)
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+frontend/blob-report/
+frontend/.vite/
+npm-debug.log*
+
+# Misc
+*.log
+/tmp/

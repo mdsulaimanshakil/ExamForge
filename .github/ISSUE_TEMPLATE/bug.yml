@@ -1,0 +1,46 @@
+name: Bug report
+description: Something is broken
+title: "[Bug] <area>: <symptom>"
+labels: ["type:bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [auth, user, subject, question, import, exam, attempt, grading, result, analytics, notification, audit, dashboard, ui, ci, deploy]
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "S1 — blocks demo / data loss / security"
+        - "S2 — feature broken, workaround exists"
+        - "S3 — cosmetic / minor"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. Log in as …
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+    validations:
+      required: true
+  - type: input
+    id: trace
+    attributes:
+      label: traceId (from error toast) / commit SHA
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      render: text

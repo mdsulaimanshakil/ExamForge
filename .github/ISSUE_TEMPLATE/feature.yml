@@ -1,0 +1,59 @@
+name: Feature / work package
+description: A planned work package (WP) or a new feature
+title: "[WP-ID] "
+labels: ["type:feature"]
+body:
+  - type: input
+    id: wp
+    attributes:
+      label: Work package ID
+      placeholder: "S06"
+    validations:
+      required: true
+  - type: dropdown
+    id: owner
+    attributes:
+      label: Owner
+      options: ["Sulaiman", "Alif", "Mehedi"]
+    validations:
+      required: true
+  - type: input
+    id: branch
+    attributes:
+      label: Branch
+      placeholder: "feature/exam-attempt-engine"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: ["Must", "Should", "Could"]
+    validations:
+      required: true
+  - type: input
+    id: day
+    attributes:
+      label: Planned day(s)
+      placeholder: "6–8"
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What will be built (link to docs/plan/17-prompts/...)
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: deps
+    attributes:
+      label: Depends on
+      placeholder: "S05 merged (exam publish snapshot)"

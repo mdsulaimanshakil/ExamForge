@@ -1,0 +1,24 @@
+name: Task / chore / docs
+description: Small task, documentation, test or tooling work
+title: "[Task] "
+labels: ["type:chore"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [chore, docs, test, refactor, contract-change]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to be done
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      value: |
+        - [ ]
